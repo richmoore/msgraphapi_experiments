@@ -7,7 +7,7 @@ import azuread
 
 config = {
     'client_id': '06151c90-18e8-4d97-8acb-b27f64345df4',
-    'client_secret': 'XXX',
+    'client_secret': 'gd.8Q~64ai53WrxC4iWUE0G4zm_Cg4XIljJtsajT',
     'authority':  'https://login.microsoftonline.com/6070b75d-b1fd-4b18-88c5-ce973c637e3a',
     'scope': ['https://graph.microsoft.com/.default'] 
 }
@@ -34,11 +34,11 @@ if __name__ == '__main__':
     azuread.set_msal_client(client, config['scope'])
 
 
-    results = azuread.get_access_packages()
-    print(json.dumps(results, indent=4))
+#    results = azuread.get_access_packages()
+#    print(json.dumps(results, indent=4))
 
     new_ap = {
-        "displayName": "Python Created Package X",
+        "displayName": "Python Created Package s",
         "description": "This is a test access package created from python",
         "isHidden": False,
         "catalog": {
@@ -46,10 +46,10 @@ if __name__ == '__main__':
         }
     }
 
-    results = azuread.create_access_package(new_ap)
+    results = azuread.accesspackage.create(new_ap)
     print(json.dumps(results, indent=4))
 
-    results = azuread.get_access_packages()
+    results = azuread.accesspackage.get()
     print(json.dumps(results, indent=4))
 
     for ap in results:
@@ -59,11 +59,11 @@ if __name__ == '__main__':
 
             ap['displayName'] = 'Python Updated Package 2'
 
-            azuread.update_access_package(id, ap)
+            azuread.accesspackage.update(id, ap)
             break
 
-    results = azuread.get_access_packages()
+    results = azuread.accesspackage.get()
     print(json.dumps(results, indent=4))
 
-    results = azuread.get_access_package_by_displayname('Python Updated Package')
+    results = azuread.accesspackage.get_by_displayname('Python Updated Package')
     print(json.dumps(results, indent=4))
