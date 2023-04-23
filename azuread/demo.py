@@ -7,7 +7,7 @@ import azuread
 
 config = {
     'client_id': '06151c90-18e8-4d97-8acb-b27f64345df4',
-    'client_secret': 'gd.8Q~64ai53WrxC4iWUE0G4zm_Cg4XIljJtsajT',
+    'client_secret': 'XX',
     'authority':  'https://login.microsoftonline.com/6070b75d-b1fd-4b18-88c5-ce973c637e3a',
     'scope': ['https://graph.microsoft.com/.default'] 
 }
