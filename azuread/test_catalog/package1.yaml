@@ -1,0 +1,15 @@
+Name: Package 1
+Template: test_template.json
+Description: >
+  This package grants awesomeness.
+
+  The package can be approved by such heros as:
+  %(Approvers)s
+
+Expires: 8h
+Approvers:
+  - test@example.com
+  - Approvers
+Groups:
+  - group1
+  - group2
